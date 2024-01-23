@@ -1,0 +1,6 @@
+set_io				clk		21
+
+set_io				led		95
+
+set_io	-pullup	yes	btn		78
+set_io	-pullup	yes	rst		79
