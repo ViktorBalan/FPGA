@@ -38,7 +38,7 @@ The folders here document programs I have created, mostly following the exercise
 11. pll
 	- usage of a phase-locked loop
 
-The source codes of exercises in the folders can be built and uploaded onto the Icestick by following these instructions:
+The source codes of exercises in the folders can be built and uploaded onto the Icestick by following these instructions (note: steps 1 to 4 are only necessary to initially set Apio up. Once you have done them once, you only need to perform step 5 or 6 when building/testing):
 1. make sure you have Python installed
 2. use pip to install Apio by running the command `pip install -U apio` in terminal
 3. install packages by running `apio install --all`
