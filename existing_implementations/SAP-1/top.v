@@ -1,9 +1,9 @@
 module top(
 	input CLK,
 	input PIN_13,
-	output reg led1,
-	output reg led2,
-	output reg led3
+	output led1,
+	output led2,
+	output led3
 	);
 
 wire[7:0] out;
@@ -13,10 +13,9 @@ always @(posedge CLK)
 
 cpu cpu0(
 	.clk(clk[15]),
-	.reset(PIN_13),
+	.reset(~PIN_13),
 	.out(out));
 
-reg[3:0] cathode = 4'b1110;
 wire[6:0] seg_ones;
 wire[6:0] seg_tens;
 wire[6:0] seg_hundreds;
@@ -36,24 +35,9 @@ seven_seg seven_seg_hundreds(
 	.bcd(bcd[11:8]),
 	.segments(seg_hundreds));
 
-always @(posedge clk[10])
-	case (cathode)
-		4'b1110: begin
-			cathode = 4'b1011;
-			led1 = seg_hundreds[0];
-		end
-		4'b1011: begin
-			cathode = 4'b1101;
-			led2 = seg_tens[0];
-		end
-		4'b1101: begin
-			cathode = 4'b1110;
-			led3 = seg_ones[0];
-		end
-		default: begin
-			cathode = 4'b1111;
-		end
-	endcase
+assign led1 = seg_ones[3];
+assign led2 = seg_tens[3];
+assign led3 = seg_hundreds[3];
 
 endmodule
 
