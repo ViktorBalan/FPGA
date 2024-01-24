@@ -1,0 +1,18 @@
+SAP-1:
+
+Number of wires:                245
+Number of wire bits:            968
+Number of public wires:         245
+Number of public wire bits:     968
+Number of memories:               0
+Number of memory bits:            0
+Number of processes:              0
+Number of cells:                514
+SB_CARRY                       45
+SB_DFF                         16
+SB_DFFE                       128
+SB_DFFER                       42
+SB_DFFN                         8
+SB_DFFNSS                       6
+SB_DFFR                         3
+SB_LUT4                       266
